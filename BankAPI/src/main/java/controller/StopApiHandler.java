@@ -20,6 +20,6 @@ public class StopApiHandler implements HttpHandler {
         os.close();
         DBConnector.closeConnection();
         System.exit(0);
-        Server.stop();
+        ServerHttpBank.stopServer();
     }
 }

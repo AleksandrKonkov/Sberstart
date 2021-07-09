@@ -5,7 +5,7 @@ import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-public class Server {
+public class ServerHttpBank {
     public static HttpServer server;
 
     public static int startServer() throws IOException {
@@ -29,7 +29,7 @@ public class Server {
 
     }
 
-    public static void stop() {
+    public static void stopServer() {
         try {
             server.stop(0);
         } catch (Exception e) {

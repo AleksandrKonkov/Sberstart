@@ -3,7 +3,7 @@
 import java.io.IOException;
 import java.sql.SQLException;
 
-import static controller.Server.startServer;
+import static controller.ServerHttpBank.startServer;
 import static db.DBConnector.*;
 
 
