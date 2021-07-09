@@ -49,7 +49,7 @@ public class DBConnector {
         List<String> listFileData = SqlLoader.load("src/main/resourses/Scr.sql");
         String sql = SqlLoader.listToString(listFileData);
 
-        Statement statement = con.createStatement();
+        Statement statement =  con.createStatement();
         statement.execute(sql);
         statement.close();
         try {

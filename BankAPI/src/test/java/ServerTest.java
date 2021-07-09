@@ -15,7 +15,6 @@ import static db.DBConnector.dbInit;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ServerTest {
     private String address;
-    private String requestBody;
     private HttpURLConnection connection;
     URL url;
 
@@ -34,7 +33,7 @@ public class ServerTest {
 
     @Test
     @Order(1)
-    void checkBalance_GET_responce() throws IOException {
+    void checkBalanceGETresponce() throws IOException {
         address = "http://localhost:8030/clients/john/cards/1";
         url = new URL(address);
         connection = (HttpURLConnection) url.openConnection();

@@ -13,15 +13,8 @@ public class ServerHttpBank {
         server = HttpServer.create(new InetSocketAddress(8030), 0);
 
         BaseHandler baseHandler = new BaseHandler();
-        StopApiHandler stopApiHandler = new StopApiHandler();
 
-
-
-        server.createContext("/exit", stopApiHandler);
         server.createContext("/clients/", baseHandler);
-
-
-
         server.setExecutor(null);
         server.start();
         return 1;
