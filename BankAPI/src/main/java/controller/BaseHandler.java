@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
                 cardsListHandler.handle(exchange);
             }
             else {
-                CardsHandler handler = new CardsHandler();
+                CardsListHandler handler = new CardsListHandler();
                 handler.handle(exchange);
             }
         }
