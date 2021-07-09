@@ -10,7 +10,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
-
+//GET  получение баланса
+// POST пополение баланса
 
 public class CardsHandler implements HttpHandler {
     @Override

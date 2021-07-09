@@ -12,6 +12,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
+//POST добавление новой карты
+//GET  вывод списка всех карт
+
 
 public class CardsListHandler implements HttpHandler {
 

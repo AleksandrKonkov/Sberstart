@@ -1,11 +1,14 @@
 import org.junit.jupiter.api.*;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.SQLException;
 
 import static controller.ServerHttpBank.startServer;
+import static controller.ServerHttpBank.stopServer;
 import static db.DBConnector.createConnection;
 import static db.DBConnector.dbInit;
 
@@ -26,14 +29,13 @@ public class ServerTest {
 
     @AfterAll
     public static void stopServerAndDB() {
-        LaunchDB.disconnect();
-        Server.stop();
+        stopServer();
     }
 
     @Test
-    @Order
-    void getAllCards_GET_TestShouldReturnString() throws IOException {
-        address = "http://localhost:8000/getAllCards";
+    @Order(1)
+    void checkBalance_GET_responce() throws IOException {
+        address = "http://localhost:8030/clients/john/cards/1";
         url = new URL(address);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
@@ -42,7 +44,7 @@ public class ServerTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         String actual = in.readLine();
 
-        String expected = "[{\"id\":1,\"card_number\":\"111000000000\"},{\"id\":2,\"card_number\":\"111000000001\"},{\"id\":3,\"card_number\":\"111000000002\"}]";
+        String expected = "{\"balance\":10.10}";
 
         Assertions.assertEquals(expected, actual);
     }
