@@ -1,0 +1,21 @@
+POST http://localhost:8030/clients/john/cards/8
+Content-Type: application/json
+
+{"sum" : 20.50}
+
+### Пополнить баланс несуществующей карты
+
+GET http://localhost:8030/clients/john/cards/8
+Accept: application/json
+
+### Узнать баланс несуществующей карты.
+
+POST http://localhost:8030/clients/john/cards/
+Content-Type: application/json
+
+{"id" : 17}
+
+### Запрос на выпуск новой карты по несуществующему счёту.
+
+GET http://localhost:8030/clients/mary/cards/
+Accept: application/json

@@ -1,0 +1,38 @@
+POST http://localhost:8030/clients/billy/cards/1
+Content-Type: application/json
+
+{"sum" : 20.50}
+
+### Пополнить баланс существующей карты на sum
+
+POST http://localhost:8030/clients/billy/cards/2
+Content-Type: application/json
+
+{"sum" : 10.50},
+
+
+### Пополнить баланс существующей карты на sum -
+
+POST http://localhost:8030/clients/john/cards/1
+Content-Type: application/json
+
+{"sum" : -5.50}
+
+### Пополнить баланс существующей карты на sum
+
+GET http://localhost:8030/clients/john/cards/1
+Accept: application/json
+
+### Узнать баланс  существующей карты.
+
+POST http://localhost:8030/clients/john/cards/
+Content-Type: application/json
+
+{"id" : 2}
+
+### Запрос на выпуск новой карты по счёту.
+
+GET http://localhost:8030/clients/billy/cards/
+Accept: application/json
+
+### Запрос списка всех карт клиента.
